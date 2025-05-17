@@ -118,7 +118,7 @@ aside {
 	text-align: center;
 }
 
-#jump-to-bottom {
+#jump-to-bottom a {
 	font-size: 0.8rem;
 	color: #555;
 }
@@ -265,8 +265,146 @@ footer a:hover {
 	main {
 		padding: 1rem;
 		margin: 1rem;
+		overflow: hidden;
+		flex-direction: column;
+		max-width: 100vw;
+	}
+
+	article,
+	aside {
+		max-width: 100%;
+		margin: 1rem 0;
+	}
+
+	.article-content {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"col1"
+			"col2"
+			"col3"
+			"full";
+		gap: 1rem;
+	}
+
+	section img,
+	aside > img {
+		width: 100%;
+		margin: 0;
+		top: 0 !important;
+		border-radius: 2rem;
+	}
+
+	.header-text,
+	.header-nav,
+	.logo-container,
+	.header-title {
+		float: none;
+		display: block;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.header-nav {
+		margin-top: 1rem;
+		margin-right: 0;
+	}
+
+	nav > ul {
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	footer {
+		position: static;
+		width: 100%;
+	}
+
+	footer > p,
+	footer > p:first-child,
+	footer > p:last-child,
+	footer > p:nth-child(2) {
+		left: 0;
+		top: 0;
+		transform: none;
+		width: 100%;
+		text-align: center;
+	}
+
+	header {
+		position: static;
+		width: 100%;
 	}
 }
 
-@media screen and (max-width: 1010px) {
+@media screen and (min-width: 601px) and (max-width: 1200px) {
+	nav {
+		background: #0074d9;
+		border-radius: 16px;
+	}
+
+	nav > ul {
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	article,
+	aside {
+		max-width: 100%;
+		margin: 1rem 0;
+	}
+
+	.article-content {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"col1"
+			"col2"
+			"col3"
+			"full";
+		gap: 1rem;
+	}
+
+	section img,
+	aside > img {
+		width: 100%;
+		margin: 0;
+		top: 0 !important;
+		border-radius: 2rem;
+	}
+
+	main {
+		padding: 1rem;
+		margin: 1rem;
+		overflow: hidden;
+		flex-direction: column;
+		max-width: 100vw;
+	}
+
+	nav {
+		margin: 1rem 0;
+	}
+
+	.article-content {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: auto auto;
+		grid-template-areas:
+			"col1 col2 col3"
+			"full full full";
+		gap: 1.5rem;
+	}
+
+	section img,
+	aside > img {
+		width: 90%;
+		margin: 0 auto;
+		display: block;
+		top: 0 !important;
+		border-radius: 1rem;
+	}
+
+	article,
+	aside {
+		max-width: 100%;
+		margin: 1rem 0;
+	}
 }
